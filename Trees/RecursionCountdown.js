@@ -8,4 +8,3 @@ function CountDown(number){
     CountDown(number - 1);
 }
 CountDown(5);
-

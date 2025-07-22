@@ -71,6 +71,73 @@ class BST {
         return false;
     }
 
+    /* Breadth first search */
+    bfs(){
+        let current = this.root;
+        let queue = [];
+        let data = [];
+
+        /* adding root node or the 1st node to the queue */
+        queue.push(current);
+
+        while(queue.length){
+            /* removes the 1st element from queue */
+            current = queue.shift();
+            /* push the removed node to the data */
+            data.push(current.value);
+
+            if(current.left) queue.push(current.left);
+
+            if(current.right) queue.push(current.right);
+        }
+        return data;
+    }
+
+    /* DFS - Pre Order : directional */
+    dfsPreOrder(node = this.root, data = []){
+        /* if nodes aren't avail, return the empy data*/
+        if(node === null) return data;
+
+        console.log("-----", data);
+
+        /* if head is present, sent it to data = [ 5 ] */
+        data.push(node.value);
+
+        /* recursion method which calls the function itself to store left and right wise nodes : directional */
+
+        if(node.left) this.dfsPreOrder(node.left, data);
+
+        if(node.right) this.dfsPreOrder(node.right, data);
+
+        return data;
+    }
+
+    dfsPostOrder(node = this.root, data = []){
+
+        if(node === null) return data;
+        console.log("------", data);
+        
+
+        if(node.left) this.dfsPostOrder(node.left, data);
+        if(node.right) this.dfsPostOrder(node.right, data);
+        data.push(node.value);
+
+        return data;
+    }
+
+    dfsInOrder(node = this.root, data = []){
+        if(node === null) return data;
+        console.log("------", data);
+
+        /* left leaf - root - right leaf */
+        if(node.left) this.dfsInOrder(node.left, data);
+        data.push(node.value);
+        if(node.right) this.dfsInOrder(node.right, data);
+
+        
+        return data;
+    }
+
 }
 
 const tree = new BST();
@@ -81,4 +148,36 @@ tree.insert(3);
 tree.insert(1);
 tree.insert(7);
 tree.insert(9);
-console.log(tree.includes(1));
+/* console.log(tree.includes(1));
+console.log(tree.bfs()); */
+/* console.log(tree.dfsPreOrder()); */
+/* console.log(tree.dfsPostOrder()); */
+console.log(tree.dfsInOrder());
+
+/* : dfsPreOrder ----- []
+----- [ 5 ]
+----- [ 5, 3 ]
+----- [ 5, 3, 1 ]
+----- [ 5, 3, 1, 8 ]
+----- [ 5, 3, 1, 8, 7 ]
+[ 5, 3, 1, 8, 7, 9 ] */
+
+
+/* PostOrder DFS
+------ []
+------ []
+------ []
+------ [ 1, 3 ]
+------ [ 1, 3 ]
+------ [ 1, 3, 7 ]
+[ 1, 3, 7, 9, 8, 5 ] */
+
+/* DFS InOrder , left - root - right
+------ []
+------ []
+------ []
+------ [ 1, 3, 5 ]
+------ [ 1, 3, 5 ]
+------ [ 1, 3, 5, 7, 8 ]
+[ 1, 3, 5, 7, 8, 9 ]
+  */
