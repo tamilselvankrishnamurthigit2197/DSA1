@@ -47,6 +47,7 @@ class Graph {
 
         /* loops over all the neighbours to remove the vtx's value which needs to remove */
         for(let neighbour of this.adjacencyList[vtx]){
+            /* it creates seperate list over the vtx and it's value  */
             this.adjacencyList[neighbour] = this.adjacencyList[neighbour].filter(
                 (v) => v != vtx
             )
