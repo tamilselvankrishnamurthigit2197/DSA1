@@ -1,5 +1,6 @@
 import './App.css'
 import UseActionState from './UseActionState/UseActionState'
+import UseCallbackEx from './useCallback/UseCallback'
 import TaskContext from './useContext/UseContext'
 import FetchAPI from './useEffect/UseEffect'
 import SearchFilter from './useMemo/useMemo'
@@ -24,7 +25,8 @@ function App() {
     {/* <TaskContext /> */}
     {/* <UseRefEx /> */}
     {/* <StorePrevRef /> */}
-    <SearchFilter />
+    {/* <SearchFilter /> */}
+    <UseCallbackEx />
     </>
   )
 }
