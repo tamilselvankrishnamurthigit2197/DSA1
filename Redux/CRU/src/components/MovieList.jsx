@@ -23,23 +23,12 @@ export default function MovieList(){
     }
 
     return(
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexGrow: 1,
-            flexDirection: 'column'
-        }}>
+        <div className="MovieList">
             {" "}
-            <h2> Movie List</h2>
-            <ul style={{listStyle: 'none'}}>
+            <h2 className="ListHead"> Movie List</h2>
+            <ul>
                 {movies.map((movie)=>(
-                    <li
-                        key={movie.id}
-                        style={{
-                            alignContent:'space-between',
-                            margin: '.4rem',
-                        }}
-                    >
+                    <li key={movie.id}>
                         {
                             editId === movie.id ? (
                                 <>
@@ -56,26 +45,17 @@ export default function MovieList(){
                                     {movie.name}
                                     
                                     <button
-                                        style={{
-                                            backgroundColor: 'tomato',
-                                            color: 'ButtonText',
-                                            padding: '.4rem',
-                                            margin: '.2rem'
-                                        }}
                                         onClick={()=>{
                                             setEditId(movie.id)
                                             setEditName(movie.name)
-                                        }}>
+                                        }}
+                                        className="edit"
+                                    >
                                             Edit</button>
 
                                     <button
                                         onClick={()=>handleRemove(movie.id)}
-                                        style={{
-                                            backgroundColor: 'blueviolet',
-                                            padding: '.4rem',
-                                            color: 'ButtonText',
-                                            margin: '.2rem'
-                                        }}
+                                        className="delete"
                                     >
                                     {" "}
                                     Delete

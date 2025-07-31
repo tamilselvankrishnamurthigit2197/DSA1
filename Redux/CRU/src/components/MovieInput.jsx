@@ -14,7 +14,7 @@ export default function MovieInput() {
     }
 
     return(
-        <div>
+        <div className="movieInput">
             <input type="text" onChange={(e)=>setNewMovie(e.target.value)}
             value={newMovie} />
             <button onClick={handleAddMovie}> Add Movie</button>

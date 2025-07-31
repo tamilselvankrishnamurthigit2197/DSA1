@@ -1,0 +1,55 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+.movieInput{
+    flex-grow: 1;
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 12px 10px;
+    background: darkkhaki;
+}
+.movieInput button{
+    border-radius: 3px;
+    padding: 7px;
+    margin: 5px;
+    background-color: black;
+    color: white;
+}
+.movieInput input{
+    border: 1px solid #000;
+    background-color: azure;
+    padding: 5px;
+}
+.MovieList{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-direction: column;
+    margin: 10px;
+    background: rgb(55, 111, 122);
+    border: 1px solid #000;
+    color: white;
+}
+.MovieList ul{
+    list-style: none;
+    padding: 3px;
+    margin: 2px;
+}
+.MovieList ul li{
+    align-content: space-around;
+    margin: 0.4rem;
+    display: -ms-flexbox;
+    padding: 1px;
+}
+
+.edit{
+    background-color: dodgerblue;
+    color: white;
+    padding: .5rem;
+    margin: .2rem;
+}
+.ListHead{
+    color: floralwhite;
+    font-size: medium;
+}
