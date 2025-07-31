@@ -16,9 +16,8 @@ export default function ChatInput({chatMessages, setChatMessages}){
         ]
         setChatMessages(newChatMessage)
 
-        /* robot response save */
+        /* robot response save and add the script of chatbot in index.html */
         const response = window.Chatbot.getResponse();
-
         setChatMessages([
             ...newChatMessage,
             {
@@ -27,7 +26,6 @@ export default function ChatInput({chatMessages, setChatMessages}){
                 id: crypto.randomUUID(),
             }
         ]);
-
         setInputText('')
     }
     return(

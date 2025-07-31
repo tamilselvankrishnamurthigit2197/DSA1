@@ -5,6 +5,7 @@ import ChatInput from './components/ChatInput'
 import ChatMessages from './components/ChatMessage'
 
 function App() {
+  
   const [chatMessages, setChatMessages] = useState([
     {
       message: 'hello buddy',
